@@ -4,7 +4,8 @@ import React from 'react';
 import { Spin } from 'antd';
 
 export default() => (
-    <Query query={gql ` { allUsers{ id,username, } } `}>
+    <div style={{display:'flex',alignItems:'center ',justifyContent:'center',height:'100vh'}}>
+    <Query query={gql ` { allUsers{ id,username } } `}>
         {({loading, error, data}) => {
             if (loading) 
                 return  <Spin />;
@@ -20,4 +21,5 @@ export default() => (
                 ));
         }}
     </Query>
+    </div>
 );

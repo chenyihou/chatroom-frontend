@@ -38,7 +38,8 @@ class Login extends React.Component {
             localStorage.setItem('token', token);
             localStorage.setItem('refreshToken', refreshToken);
             message.success("Login successfully");
-            this.props.history.push("/");
+            let { from } = this.props.location.state || { from: { pathname: "/" } }
+            this.props.history.push(from);
         } else {
             errors.forEach(e => {
                 message.error(e.message);
