@@ -148,4 +148,6 @@ class Register extends React.Component {
     }
 }
 
+
+
 export default Form.create()(Register);
